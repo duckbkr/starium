@@ -1,0 +1,84 @@
+body{
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Karanlık Mod */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.news-page.dark-mode {
+    background-color: #444;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+button.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+button {
+    position: absolute; /* Konumlandırma için absolute kullanıyoruz */
+    bottom: 20px; /* Sayfanın altına 20px uzaklıkta */
+    right: 20px; /* Sayfanın sağına 20px uzaklıkta */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10; /* Diğer öğelerin üzerinde olması için */
+    transition: background-color 0.3s ease; /* Renk geçişi animasyonu */
+}
+@keyframes slide {
+    0% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(-10px); }
+}
+button {
+    animation: slide 1s ease-in-out infinite; /* Animasyonu başlat */
+}
+
+/* Karanlık Mod İçin Buton Stilleri */
+button.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.news-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    perspective: 1500px;
+}
+.news-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    backface-visibility: hidden;
+    padding: 20px;
+    display: none; /* Başlangıçta gizli */
+}
+#page1 {
+    display: block; /* Başlangıçta yalnızca bu sayfa görünür */
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative; /* Butonu konumlandırabilmek için relative konumlama */
+    z-index: 10; /* Sayfaların z-index değerinden daha yüksek bir değer verin */
+}
